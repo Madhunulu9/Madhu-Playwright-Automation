@@ -14,7 +14,7 @@ await page.getByRole("button" , {name : "Button Triggering Client Side Logic"}).
 await expect(page.locator('//p[@class="bg-success"]')).toBeVisible({timeout : 20000});
 });
 
-test.only('IPL' , async ({page})=>{
+test('IPL' , async ({page})=>{
     const linkText = 'Governing Council'
     const Header = 'Governing Council'
 // await page.goto("https://www.iplt20.com/")
@@ -38,7 +38,6 @@ await page.goto('https://www.iplt20.com/videos/s-ipl-2026-final-rcb-vs-gt-match-
   //await page.locator(`//span[text()="${linkText}"]`).click();
   await page.getByText(linkText).click();
   await expect(page.getByTestId('about-page-title')).toHaveText(Header);
-  
 });
 
 
