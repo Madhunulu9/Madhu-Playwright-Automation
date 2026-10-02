@@ -19,7 +19,7 @@ test('handlingSliders' ,async ({page})=>{
    }
 })
 
-test.only('move slider dynamically', async ({ page }) => {
+test('move slider dynamically', async ({ page }) => {
   const targetPrice = 145;
   const minPrice = 100;
   await page.goto('https://testautomationpractice.blogspot.com/');
@@ -32,7 +32,7 @@ test.only('move slider dynamically', async ({ page }) => {
   }
 });
 
-test.only('move slider dynamically 2', async ({ page }) => {
+test('move slider dynamically 2', async ({ page }) => {
   
 });
 

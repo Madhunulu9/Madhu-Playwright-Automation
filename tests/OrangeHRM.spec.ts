@@ -33,8 +33,6 @@ test('User Creation' , async({page})=>{
     await expect(required).toBeVisible()
     await page.locator("//div[@class='oxd-select-text-input']").nth(0).click()
     await page.locator("//div[@role='option']//span[text()='Admin']").click()
-    
-    
 })
 
 

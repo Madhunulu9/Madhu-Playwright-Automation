@@ -2,12 +2,8 @@ import { test, expect } from '@playwright/test';
 import sql from 'mssql';
 
 test('Verify user data in database', async ({ page }) => {
-
   await page.goto('https://example.com');
-
-  // UI action
   await page.getByRole('button', { name: 'Create User' }).click();
-
   // Connect to database
   const pool = await sql.connect({
     user: 'dbuser',
@@ -19,14 +15,10 @@ test('Verify user data in database', async ({ page }) => {
       trustServerCertificate: true
     }
   });
-
   // Query database
   const result = await pool
-    .request()
-    .input('username', sql.VarChar, 'john123')
-    .query(
-      'SELECT username, status FROM users WHERE username = @username'
-    );
+    .request() .input('username', sql.VarChar, 'john123')
+    .query('SELECT username, status FROM users WHERE username = @username');
 
   // Validate DB data
   expect(result.recordset.length).toBe(1);

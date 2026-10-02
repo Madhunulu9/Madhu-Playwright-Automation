@@ -32,7 +32,7 @@ test('drop down Handling' , async({page})=>{
   await page.getByText('✅DropDown').click();
   await page.locator('select').selectOption('js'); 
 })
-test.only('radio Button ' , async({page})=>{
+test('radio Button ' , async({page})=>{
     await page.goto('https://qasmart.in/');
     await page.getByText('Practice Lab ▾').hover();
     await page.getByText('✅Registration').click();
